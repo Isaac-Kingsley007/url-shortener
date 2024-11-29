@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Url Shortener{% endblock %}
+
+{% set css_file="your_url.css" %}
+
+{% block body %}
+
+<h1>Shortended URL</h1>
+
+<h2> Your Code : {{ code }}</h2>
+
+<a href="{{ url_for('home') }}">Return Back Home</a>
+
+{% endblock %}

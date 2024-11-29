@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Url Shortener{% endblock %}
+
+{% set css_file="home.css" %}
+
+{% block body %}
+
+<div class="container">
+
+{% for messages in get_flashed_messages() %}
+
+<h3>{{ messages }}</h3>
+
+{%endfor%}
+<div class="form-container">
+<form action="your_url", method="post">
+<h2>URL SHORTENER</h2>
+<lable for="url">Link</lable>
+<input type="url" name="url" value="" required><br>
+<lable for="code">Shortended name</lable>
+<input type="text" name="code" value="" required><br>
+<input type="submit" value="Shorten">
+</form>
+</div>
+
+<div class="links-list-display">
+
+<h3 class="links-list-text">LINKS CREATED</h3>
+<ul class="links-list">
+    {% for code in codes.keys() %}
+    <li ><a href="{{ url_for('fetch',code=code) }}" class="links-list-item">{{ code }}</a></li>
+    {% endfor %}
+</ul>
+</div>
+
+</div>
+{% endblock %}

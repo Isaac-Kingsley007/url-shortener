@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Url Shortener{% endblock %}
+
+{% set css_file="your_url.css" %}
+
+{% block body %}
+
+<h1>Requested URL was not found - 404</h1>
+
+<h2>Visit Our Home Page</h2>
+
+<a href="{{ url_for('home') }}">Home</a>
+
+{% endblock %}
